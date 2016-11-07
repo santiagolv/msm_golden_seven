@@ -1,0 +1,59 @@
+<head>
+  <title>ResourcePractice</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css"/>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+  <style>
+  body {
+    padding-top: 50px;
+  }
+  </style>
+</head>
+<body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+
+      <a href="/" class="navbar-brand">MovieDB</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/directors">Directors</a>
+        </li>
+        <li>
+          <a href="/movies">Movies</a>
+        </li>
+        <li>
+          <a href="/actors">Actors</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Movie #<%= @movie.id %></h1>
+    </div>
+
+    <dl class="dl-horizontal">
+      <dt>Title</dt>
+      <dd><%= @movie.title %></dd>
+
+      <dt>Year</dt>
+      <dd><%= @movie.year %></dd>
+
+      <dt>Duration</dt>
+      <dd><%= @movie.duration %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @movie.description %></dd>
+
+      <dt>Director ID</dt>
+      <dd><%= @movie.director_id %></dd>
+
+      <dt>Image</dt>
+      <dd><img src="<%= @movie.image_url %>" width="320"></dd>
+
+
+    </dl>
+  </div>
+</body>

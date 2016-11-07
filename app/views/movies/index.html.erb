@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ResourcePractice</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css"/>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+  <style>
+  body {
+    padding-top: 50px;
+  }
+  </style>
+</head>
+<body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+
+      <a href="/" class="navbar-brand">MovieDB</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/directors">Directors</a>
+        </li>
+        <li>
+          <a href="/movies">Movies</a>
+        </li>
+        <li>
+          <a href="/actors">Actors</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="page-header">
+      <h1>Movies</h1>
+    </div>
+    <p>
+      <a href="/movies/new_form" class="btn btn-primary">Add a New Movie</a>
+    </p>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Duration</th>
+          <th>Description</th>
+          <th>Director ID</th>
+          <th>Details</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @movies.each do |movie| %>
+        <tr>
+          <td><img src="<%= movie.image_url %>" width="80"></td>
+          <td><%= movie.title %></td>
+          <td><%= movie.year %></td>
+          <td><%= movie.duration %></td>
+          <td><%= movie.description %></td>
+          <td><%= movie.director_id %></td>
+          <td>
+            <a href="/movies/<%= movie.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+          </td>
+          <td>
+            <a href="/movies/<%= movie.id %>/edit_form" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+          </td>
+          <td>
+            <a href="/delete_movie/<%= movie.id %>" class="btn btn-danger">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+  </div>
+</body>
+<script src="chrome-extension://bmagokdooijbeehmkpknfglimnifench/googleChrome.js"/>
+</html>
