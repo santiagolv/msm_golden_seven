@@ -1,0 +1,52 @@
+<head>
+  <title>ResourcePractice</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css"/>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+  <style>
+  body {
+    padding-top: 50px;
+  }
+  </style>
+</head>
+<body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+
+      <a href="/" class="navbar-brand">MovieDB</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/directors">Directors</a>
+        </li>
+        <li>
+          <a href="/movies">Movies</a>
+        </li>
+        <li>
+          <a href="/actors">Actors</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Actor #<%= @actor.id %></h1>
+    </div>
+
+    <dl class="dl-horizontal">
+      <dt>Dob</dt>
+      <dd><%= @actor.dob %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @actor.name %></dd>
+
+      <dt>Bio</dt>
+      <dd><%= @actor.bio %></dd>
+
+      <dt>Image</dt>
+      <dd><img src="<%= @actor.image_url %>" width="320"></dd>
+
+    </dl>
+  </div>
+</body>
